@@ -3,7 +3,6 @@ import { Button, Card, IconButton, Input, Typography } from '@material-tailwind/
 import { AnimatePresence, motion } from "motion/react";
 import { FastForward, Play, PlayIcon, Rewind } from 'lucide-react';
 import VideoJS from './VideoJS';
-import AFrameVideo from './AFrameVideo';
 // https://videojs-vr.netlify.app/samples/eagle-360.mp4
 
 function App() {

@@ -24,17 +24,17 @@ const VideoJS = (props) => {
         const player = playerRef.current = videojs(videoElement, options, () => {
             videojs.log('player is ready');
             onReady && onReady(player);
-        });
 
-        console.log(player)
+            player.querySelector("video").setAttribute("crossorigin", "anonymous")
+        });
 
         // You could update an existing player in the `else` block here
         // on prop change, for example:
         } else {
-        const player = playerRef.current;
+            const player = playerRef.current;
 
-        player.autoplay(options.autoplay);
-        player.src(options.sources);
+            player.autoplay(options.autoplay);
+            player.src(options.sources);
         }
     }, [options, videoRef]);
 
@@ -53,7 +53,7 @@ const VideoJS = (props) => {
 
     return (
         <div data-vjs-player>
-        <div ref={videoRef} />
+        <div ref={videoRef} crossorigin="anonymous" />
         </div>
     );
 }
